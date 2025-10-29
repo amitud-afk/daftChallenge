@@ -98,14 +98,11 @@ Your task is to recreate these three historical DAGs using DAFT, making them vis
 
 ```{python}
 #| label: dag-1-1747
-#| echo: true
+#| echo: false
+
 
 # TODO: Replace this placeholder with your DAFT code
 # Create a DAG showing the 1747 understanding: Lemons → Scurvy Prevention
-
-# Your code here - recreate the DAG from the reference image
-# Use DAFT to create nodes and edges that match the visual structure
-# Customize colors and styling to make it professional
 
 import daft
 import matplotlib.pyplot as plt
@@ -135,8 +132,7 @@ pgm.add_edge("lemons","scurvy")
 pgm.render()
 
 plt.title("Simplified Lind's Model (1747)")
-
-
+plt.show()
 
 ```
 
@@ -155,14 +151,10 @@ plt.title("Simplified Lind's Model (1747)")
 
 ```{python}
 #| label: dag-2-misguided
-#| echo: true
+#| echo: false
 
 # TODO: Replace this placeholder with your DAFT code
 # Create a DAG showing the misguided belief: Acid → Bacteria Death → Scurvy Prevention
-
-# Your code here - recreate the DAG from the reference image
-# This DAG should show the incorrect causal chain
-# Use different colors or styling to indicate this is the wrong understanding
 
 import daft
 import matplotlib.pyplot as plt
@@ -202,11 +194,7 @@ pgm.add_edge("bacteria", "scurvy")
 pgm.render()
 
 plt.title("Updated Bacterial Theory (Late 19th Century)", fontsize=14)
-
-
-
-
-
+plt.show()
 
 ```
 
@@ -221,14 +209,10 @@ plt.title("Updated Bacterial Theory (Late 19th Century)", fontsize=14)
 
 ```{python}
 #| label: dag-3-1928
-#| echo: true
+#| echo: false
 
 # TODO: Replace this placeholder with your DAFT code
 # Create a DAG showing the 1928 understanding: Vitamin C → Scurvy Prevention
-
-# Your code here - recreate the DAG from the reference image
-# This should be the most complete and accurate representation
-# Use professional styling that would be suitable for a scientific publication
 
 import daft
 import matplotlib.pyplot as plt
@@ -268,10 +252,7 @@ pgm.add_edge("collagen", "scurvy")
 pgm.render()
 
 plt.title("Simplified Modern Understanding (1930s onwards)", fontsize=14)
-
-
-
-
+plt.show()
 
 
 ```
@@ -307,7 +288,7 @@ Here's an example (see @fig-example-node) of how to create a professionally styl
 
 ```{python}
 #| label: fig-example-node
-#| echo: true
+#| echo: false
 #| fig-cap: "Example: Professional DAFT Node Styling"
 
 import daft
