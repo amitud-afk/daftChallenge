@@ -106,7 +106,43 @@ Your task is to recreate these three historical DAGs using DAFT, making them vis
 # Your code here - recreate the DAG from the reference image
 # Use DAFT to create nodes and edges that match the visual structure
 # Customize colors and styling to make it professional
+
+import daft
+import matplotlib.pyplot as plt
+
+
+# Create a PGM object
+pgm = daft.PGM(dpi=150, alternate_style="outer")
+
+# Example of a professionally styled node with diagonal connection
+pgm.add_node("lemons", "Lemons", 1, 1, aspect = 3, scale = 1.1,
+             plot_params={
+                 'facecolor': 'yellow', 
+                 'edgecolor': 'black', 
+                 'linewidth': 2,
+                 'alpha': 0.8,
+             })
+pgm.add_node("scurvy", "Scurvy", 3.25, 1, aspect = 3, scale = 1.1,
+             plot_params={
+                 'facecolor': 'thistle', 
+                 'edgecolor': 'black', 
+                 'linewidth': 2,
+                 'alpha': 0.8,
+             })
+
+pgm.add_edge("lemons","scurvy")
+
+pgm.render()
+
+plt.title("Simplified Lind's Model (1747)")
+
+
+
 ```
+
+
+
+
 
 ### DAG 2: The Misguided Belief (Wrong Understanding)
 
@@ -127,6 +163,51 @@ Your task is to recreate these three historical DAGs using DAFT, making them vis
 # Your code here - recreate the DAG from the reference image
 # This DAG should show the incorrect causal chain
 # Use different colors or styling to indicate this is the wrong understanding
+
+import daft
+import matplotlib.pyplot as plt
+
+
+# Create a PGM object
+pgm = daft.PGM(dpi=150, alternate_style="outer")
+
+# Example of a professionally styled node with diagonal connections
+pgm.add_node("acid", "Acid", 1, 2.5, aspect = 3, scale = 1.1,
+             plot_params={
+                 'facecolor': 'orange', 
+                 'edgecolor': 'black', 
+                 'linewidth': 2,
+                 'alpha': 0.8,
+             })
+
+pgm.add_node("bacteria", "Bacteria in Food", 2.5, 1.5, aspect = 3, scale = 1.1,
+             plot_params={
+                 'facecolor': 'lightcoral', 
+                 'edgecolor': 'darkred', 
+                 'linewidth': 2,
+                 'alpha': 0.8,
+             })
+pgm.add_node("scurvy", "Scurvy", 4, .5, aspect = 3, scale = 1.1,
+             plot_params={
+                 'facecolor': 'thistle', 
+                 'edgecolor': 'black', 
+                 'linewidth': 2,
+                 'alpha': 0.8,
+             })
+
+
+pgm.add_edge("acid", "bacteria")  
+pgm.add_edge("bacteria", "scurvy") 
+
+pgm.render()
+
+plt.title("Updated Bacterial Theory (Late 19th Century)", fontsize=14)
+
+
+
+
+
+
 ```
 
 ### DAG 3: The 1928 Understanding (Complete and Correct)
@@ -148,6 +229,51 @@ Your task is to recreate these three historical DAGs using DAFT, making them vis
 # Your code here - recreate the DAG from the reference image
 # This should be the most complete and accurate representation
 # Use professional styling that would be suitable for a scientific publication
+
+import daft
+import matplotlib.pyplot as plt
+
+
+# Create a PGM object
+pgm = daft.PGM(dpi=150, alternate_style="outer")
+
+# Example of a professionally styled node with diagonal connections
+pgm.add_node("vitamin", "Vitamin C", 1, 2.5, aspect = 3, scale = 1.1,
+             plot_params={
+                 'facecolor': 'yellow', 
+                 'edgecolor': 'black', 
+                 'linewidth': 2,
+                 'alpha': 0.8,
+             })
+
+pgm.add_node("collagen", "Collagen Synthesis", 2.5, 1.5, aspect = 4, scale = 1.1,
+             plot_params={
+                 'facecolor': 'lightblue', 
+                 'edgecolor': 'darkred', 
+                 'linewidth': 2,
+                 'alpha': 0.8,
+             })
+pgm.add_node("scurvy", "Scurvy", 4, .5, aspect = 3, scale = 1.1,
+             plot_params={
+                 'facecolor': 'thistle', 
+                 'edgecolor': 'black', 
+                 'linewidth': 2,
+                 'alpha': 0.8,
+             })
+
+
+pgm.add_edge("vitamin", "collagen")  
+pgm.add_edge("collagen", "scurvy") 
+
+pgm.render()
+
+plt.title("Simplified Modern Understanding (1930s onwards)", fontsize=14)
+
+
+
+
+
+
 ```
 
 ## Student Requirements Section: Mastering DAFT Visualization {#student-analysis-section}
